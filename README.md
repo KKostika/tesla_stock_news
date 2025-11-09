@@ -22,7 +22,7 @@ This Python bot monitors daily stock price changes for **Tesla (TSLA)** using th
 
 Create a `.env` file in the root directory and include:
 
-```env
+```env 
 STOCK_API_KEY=your_alpha_vantage_key
 NEWS_API_KEY=your_newsapi_key
 BOT_TOKEN=your_telegram_bot_token
@@ -37,6 +37,6 @@ python main.py
 📬 Telegram Output Example
 Headline: Tesla shares surge after earnings beat.
 Brief: Tesla reported better-than-expected Q3 results, pushing the stock up 5%.
-
-👩‍💻 Author
+```
+## 👩‍💻 Author
 Kyriaki Kostika
