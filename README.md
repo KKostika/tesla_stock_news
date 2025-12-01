@@ -8,6 +8,9 @@ This Python bot monitors daily stock price changes for **Tesla (TSLA)** using th
 - Calculates the percentage change between them
 - If the change exceeds 3%, fetches related news headlines
 - Sends the top 3 articles to Telegram using a bot
+- Automates monitoring of TSLA stock without manual checks
+- Delivers instant alerts to Telegram for faster decision‑making
+- Reduces time spent on market tracking by providing curated news directly to the user
 
 ## 🧰 Technologies Used
 
