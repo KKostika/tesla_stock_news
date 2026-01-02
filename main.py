@@ -77,7 +77,7 @@ if dif_percent > 3:
     print('\n')
 
 
-    formatted_articles = [f"{STOCK_NAME}: {up_down}{diff_percent}%\nHeadline: {article['title']}. \nBrief: {article['description']}" for article in three_articles]
+    formatted_articles = [f"{STOCK_NAME}: {up_down}{dif_percent}%\nHeadline: {article['title']}. \nBrief: {article['description']}" for article in three_articles]
     print(formatted_articles)
 
 
