@@ -53,10 +53,14 @@ print(day_before_yesterday_closing_price)
 
 #It finds the positive difference between 1 and 2
 difference = abs(float(yesterday_closing_price) - float(day_before_yesterday_closing_price))
-print(difference)
+up_down = None
+if difference > 0:
+    up_down = "🔺"
+else:
+    up_down = "🔻"
 
 # The percent of the difference
-dif_percent = (difference / float(yesterday_closing_price)) * 100
+dif_percent = round((difference / float(yesterday_closing_price)) * 100)
 print(dif_percent)
 
 # Getting the first 3 articles/ news of the company we are interested in whenever there is a difference bigger than 3%.
@@ -65,6 +69,7 @@ if dif_percent > 3:
         "apiKey": NEWS_API_KEY,
         "qInTitle": COMPANY_NAME,
     }
+    
     news_response = requests.get(NEWS_ENDPOINT, params=news_params)
     articles = news_response.json()["articles"]
     three_articles = articles[:3]
@@ -72,7 +77,9 @@ if dif_percent > 3:
     print('\n')
 
 
-    formatted_articles = [f"Headline: {article['title']}. \nBrief: {article['description']} " for article in three_articles]
+    formatted_articles = [f"{STOCK_NAME}: {up_down}{diff_percent}%\nHeadline: {article['title']}. \nBrief: {article['description']}" for article in three_articles]
+    print(formatted_articles)
+
 
     for article in formatted_articles:
         message = telegram_bot(article)
